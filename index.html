@@ -7,9 +7,9 @@
   <meta name="description" content="Aprende StoneScript (Stone Story RPG) de forma fácil, con preguntas y respuestas.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7381295468124840" crossorigin="anonymous"></script>
   <style>
-    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --accent:#4493f8; --border:#30363d; }
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --accent:#4493f8; --border:#30363d; --paypal:#003087; --kofi:#FF5E99; }
     @media (prefers-color-scheme: light) {
-      :root { --bg:#fff; --fg:#24292f; --muted:#57606a; --accent:#0969da; --border:#d0d7de; }
+      :root { --bg:#fff; --fg:#24292f; --muted:#57606a; --accent:#0969da; --border:#d0d7de; --paypal:#003087; --kofi:#FF5E99; }
     }
     * { box-sizing: border-box; }
     body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
@@ -24,13 +24,18 @@
     .links a { color:var(--accent); text-decoration:none; }
     .links a:hover { text-decoration:underline; }
 
-    /* Support links (subtle, non-intrusive) */
+    /* Support links (colored icons + small label) */
     .support { margin-top:0.6rem; }
-    .support a { color:var(--accent); text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; padding:.18rem .5rem; border-radius:6px; }
+    .support a { text-decoration:none; display:inline-flex; align-items:center; gap:.5rem; padding:.14rem .5rem; border-radius:8px; }
     .support a .icon { width:18px; height:18px; display:inline-block; flex:0 0 18px; }
-    .support a:hover { background: rgba(68,147,248,0.06); }
+    .support a .label { font-size:0.65rem; text-transform:uppercase; padding:0.08rem .36rem; border-radius:999px; color:#fff; margin-right:0.35rem; display:inline-block; }
+    .support a.paypal { color:var(--paypal); }
+    .support a.paypal .label { background:var(--paypal); }
+    .support a.kofi { color:var(--kofi); }
+    .support a.kofi .label { background:var(--kofi); }
+    .support a:hover { background: rgba(255,255,255,0.03); }
     @media (prefers-color-scheme: light) {
-      .support a:hover { background: rgba(9,105,218,0.06); }
+      .support a:hover { background: rgba(0,0,0,0.03); }
     }
   </style>
 </head>
@@ -47,23 +52,25 @@
       </p>
       <p class="support">
         Apóyame:
-        <a href="https://paypal.me/HolaAdios657" target="_blank" rel="noopener noreferrer" aria-label="Apoyar por PayPal">
-          <!-- simple PayPal-like P icon (monochrome) -->
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M7 7h4.5c2.2 0 3.5-1 3.5-2.8S13.7 1 11.5 1H6v14h3c1.7 0 2.8-0.7 3.2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 13h4.5c2.2 0 3.5-1 3.5-2.8S15.7 8 13.5 8H8v8h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <a class="paypal" href="https://paypal.me/HolaAdios657" target="_blank" rel="noopener noreferrer" aria-label="Apoyar por PayPal">
+          <span class="label">Apoyar</span>
+          <!-- PayPal icon (colored via currentColor) -->
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 7h4.5c2.2 0 3.5-1 3.5-2.8S13.7 1 11.5 1H6v14h3c1.7 0 2.8-0.7 3.2-2" />
+            <path d="M9 13h4.5c2.2 0 3.5-1 3.5-2.8S15.7 8 13.5 8H8v8h4" />
           </svg>
-          PayPal.me (Hola Adios — @HolaAdios657)
+          <span>PayPal.me (Hola Adios — @HolaAdios657)</span>
         </a>
         ·
-        <a href="https://ko-fi.com/hibye_the_cat" target="_blank" rel="noopener noreferrer" aria-label="Apoyar por Ko-fi">
-          <!-- simple Ko-fi cup/heart icon -->
-          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M3 6h12v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M18 8v2a3 3 0 0 1-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8.5 11.5c0-1.5 1.5-2.5 3-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <a class="kofi" href="https://ko-fi.com/hibye_the_cat" target="_blank" rel="noopener noreferrer" aria-label="Apoyar por Ko-fi">
+          <span class="label">Apoyar</span>
+          <!-- Ko-fi icon (colored via currentColor) -->
+          <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 6h12v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V6z" />
+            <path d="M18 8v2a3 3 0 0 1-3 3" />
+            <path d="M8.5 11.5c0-1.5 1.5-2.5 3-1" />
           </svg>
-          Ko‑fi
+          <span>Ko‑fi</span>
         </a>
       </p>
     </div>
